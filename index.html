@@ -8,64 +8,17 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-image: url('https://p5.ssl.qhimgs1.com/t043670eb52cc1b7e65.jpg');
+  background-image: url('https://p5.ssl.qhimgs1.com/t043670eb52cc1b7e65.jpg'); /* 替换为你的卡通背景图片 */
   background-size: cover;
 }
 
-/* 顶部导航栏，横向排列，避免挡住图片 */
-.navbar {
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999; /* 确保在最前面 */
-}
-
-/* 导航菜单按钮样式 */
-.navbar a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  font-size: 16px;
-  padding: 8px 12px;
-  background-color: #f5d142;
-  border-radius: 8px;
-  transition: background-color 0.3s;
-}
-.navbar a:hover {
-  background-color: #f5a142;
-}
-
-/* 内容区，上方空白留出导航栏高度 */
+/* 内容区留出顶部空白 */
 .content {
-  padding-top: 70px; /* 让内容不被导航栏挡住 */
+  padding-top: 70px;
   padding-left: 20px;
   padding-right: 20px;
 }
 
-/* 图片区域，采用flex排列 四个一行 */
-.image-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; /* 空间分布均匀 */
-  gap: 10px;
-  margin: 20px 0;
-}
-.image-container a {
-  flex: 1 1 calc(25% - 10px); /* 4个一行，减去空隙 */
-}
-.image-container img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-}
 /* 图片容器，使用Flexbox实现*/
 .image-container {
   display: flex;
@@ -83,33 +36,74 @@ body {
   border-radius: 10px;
   object-fit: cover;
 }
-/* ... 其他样式保持不变 ... */
+/* 分类区域 */
+.category {
+  margin-top: 40px;
+}
+.category h2 {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  margin-bottom: 20px;
+  color: #333;
+}
 
+/* 小框架网格 */
+.frame-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.small-frame {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+.small-frame a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+.small-frame a:hover {
+  color: #f55;
+}
+
+/* 联系方式样式 */
+.contact {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+.contact a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* 响应式调整 */
 @media(max-width: 600px){
-  /* 手机端调整 */
   .navbar {
     flex-direction: column;
   }
   .navbar a {
     margin: 10px 0;
   }
-  .image-container {
+  .image-row {
     justify-content: center;
   }
-  .image-container a {
-    flex: 1 1 45%; /* 手机端两列 */
+  .image-row a {
+    flex: 1 1 45%; /* 手机屏幕下图片宽度适应屏幕 */
   }
 }
 </style>
 </head>
 <body>
 
-<!-- 顶部导航栏 -->
-<div class="navbar">
-  <a href="#novel-section">导航站</a>
-  <a href="#comic-section">赚钱的</a>
-  <a href="#anime-section">看片的</a>
-</div>
 <!-- 八个图片一行四个，两行 -->
 <div class="image-container">
     <a href="https://di5euh9afg00f.cloudfront.net/?dc=CZZ75"><img src="https://pttptt.cc/images/friend/0/697.avif?1751375374" alt="图片1"></a>
