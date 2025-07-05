@@ -46,19 +46,18 @@ body {
   padding-right: 20px;
 }
 
-/* 自适应图片四格布局 */
-.image-row {
+/* 图片容器，使用Flexbox实现*/
+.image-container {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px; /* 控制图片间距 */
   margin: 20px 0;
 }
-.image-row a {
-  flex: 1 1 22%; /* 允许伸缩，基本宽度22% */
-  max-width: 150px;
-  margin: 10px;
+.image-container a {
+  flex: 1 1 calc(25% - 10px); /* 每个元素占25%的宽度，减去间距 */
 }
-.image-row img {
+.image-container img {
   width: 100%;
   height: auto;
   border-radius: 10px;
@@ -139,15 +138,12 @@ body {
   <a href="#comic-section">赚钱的</a>
   <a href="#anime-section">看片的</a>
 </div>
-<!-- 八个图片两行，尺寸自适应 -->
-<div class="content">
-  <div class="image-row">
+<!-- 八个图片一行四个，两行 -->
+<div class="image-container">
     <a href="https://di5euh9afg00f.cloudfront.net/?dc=CZZ75"><img src="https://pttptt.cc/images/friend/0/697.avif?1751375374" alt="图片1"></a>
     <a href="https://app06sd2s0.turlosnarkaslopid.com/bk/39990/ac5g1emh"><img src="https://pttptt.cc/images/friend/0/746.avif?1751042560" alt="图片2"></a>
     <a href="https://bs2806.trevovalkrespexil.com/yj/40916/di1x8hbld"><img src="https://pttptt.cc/images/friend/0/748.avif?1751536472" alt="图片3"></a>
     <a href="https://d3fvbx5fmquoav.cloudfront.net/?dc=LFHL06"><img src="https://pttptt.cc/images/friend/0/719.avif?1751041084" alt="图片4"></a>
-  </div>
-  <div class="image-row">
     <a href="https://上海-svip大学.大爱无私7988.com:17988/j6Rqj"><img src="https://pttptt.cc/images/friend/0/744.avif?1751041084" alt="图片5"></a>
     <a href="https://xpj079cc08868comxpjggtz.589781.top:8899/ylgg093.html"><img src="https://pttptt.cc/images/friend/0/740.avif?1751041084" alt="图片6"></a>
     <a href="https://tycapp9428com08088com.568886.top:8899/tycgg035.html"><img src="https://pttptt.cc/images/friend/0/743.avif?1751041084" alt="图片7"></a>
@@ -198,6 +194,18 @@ body {
       <div class="small-frame"><a href="https://xpj229cc9264com.8353762.xyz:8899/xpjgg006.html">澳门新葡京</a></div>
       <div class="small-frame"><a href="https://08088tzdadt.6385782.xyz:8899/tycgg022.html">太阳城注册送888</a></div>
     </div>
+     <div class="frame-grid">
+      <div class="small-frame"><a href="http://103.233.248.68/pt/hengsheng.html">赢咖8</a></div>
+      <div class="small-frame"><a href="http://103.233.248.68/pt/huida.html">辉达娱乐</a></div>
+      <div class="small-frame"><a href="https://xpj229cc9264com.8353762.xyz:8899/xpjgg006.html">澳门新葡京</a></div>
+      <div class="small-frame"><a href="https://08088tzdadt.6385782.xyz:8899/tycgg022.html">太阳城注册送888</a></div>
+    </div>
+     <div class="frame-grid">
+      <div class="small-frame"><a href="http://103.233.248.68/pt/hengsheng.html">赢咖8</a></div>
+      <div class="small-frame"><a href="http://103.233.248.68/pt/huida.html">辉达娱乐</a></div>
+      <div class="small-frame"><a href="https://xpj229cc9264com.8353762.xyz:8899/xpjgg006.html">澳门新葡京</a></div>
+      <div class="small-frame"><a href="https://08088tzdadt.6385782.xyz:8899/tycgg022.html">太阳城注册送888</a></div>
+    </div>
   </div>
 
   <!-- 看片部分 -->
@@ -208,6 +216,24 @@ body {
       <div class="small-frame"><a href="https://qsggrkym.blob.core.windows.net/dycrk418/index.html?iuid=451157">免费看片</a></div>
       <div class="small-frame"><a href="https://ss86-14.xyz/?channel=qun6">久看不厌</a></div>
       <div class="small-frame"><a href="https://d280023xgtjla7.cloudfront.net/?dc=LFHL06">妻友交流</a></div>
+    </div>
+     <div class="frame-grid">
+      <div class="small-frame"><a href="http://103.233.248.68/pt/hengsheng.html">赢咖8</a></div>
+      <div class="small-frame"><a href="http://103.233.248.68/pt/huida.html">辉达娱乐</a></div>
+      <div class="small-frame"><a href="https://xpj229cc9264com.8353762.xyz:8899/xpjgg006.html">澳门新葡京</a></div>
+      <div class="small-frame"><a href="https://08088tzdadt.6385782.xyz:8899/tycgg022.html">太阳城注册送888</a></div>
+    </div>
+     <div class="frame-grid">
+      <div class="small-frame"><a href="http://103.233.248.68/pt/hengsheng.html">赢咖8</a></div>
+      <div class="small-frame"><a href="http://103.233.248.68/pt/huida.html">辉达娱乐</a></div>
+      <div class="small-frame"><a href="https://xpj229cc9264com.8353762.xyz:8899/xpjgg006.html">澳门新葡京</a></div>
+      <div class="small-frame"><a href="https://08088tzdadt.6385782.xyz:8899/tycgg022.html">太阳城注册送888</a></div>
+    </div>
+     <div class="frame-grid">
+      <div class="small-frame"><a href="http://103.233.248.68/pt/hengsheng.html">赢咖8</a></div>
+      <div class="small-frame"><a href="http://103.233.248.68/pt/huida.html">辉达娱乐</a></div>
+      <div class="small-frame"><a href="https://xpj229cc9264com.8353762.xyz:8899/xpjgg006.html">澳门新葡京</a></div>
+      <div class="small-frame"><a href="https://08088tzdadt.6385782.xyz:8899/tycgg022.html">太阳城注册送888</a></div>
     </div>
   </div>
 </div>
